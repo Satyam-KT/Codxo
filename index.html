@@ -32,7 +32,7 @@
   <body>
     <section class="header">
       <nav>
-        <a href="home.html"><img src="Images/logo.jpg" alt="" /></a>
+        <a href="index.html"><img src="Images/logo.jpg" alt="" /></a>
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
@@ -53,6 +53,42 @@
         <a href="https://forms.gle/g641gKQacs4JiSJz8" class="hero-btn">Register Here</a>
       </div>
     </section>
+
+    <!-- ----------footer---------------- -->
+
+    <section class="footer">
+      <h1>About Us</h1>
+      
+      <div class="icons">
+        <a
+          href=""
+          class="fa fa-facebook"
+        ></a>
+        <a href="" class="fa fa-twitter"></a>
+        <a
+          href=""
+          class="fa fa-instagram"
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/codxo/"
+          class="fa fa-linkedin"
+        ></a>
+      </div>
+      
+      <p>© 2024 CodXo</p>
+    </section>
+    
+    <!--Javascript for Toggle Menu-->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
     </script>
   </body>
 </html>

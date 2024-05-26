@@ -48,7 +48,7 @@ nav img {
   content: "";
   width: 0%;
   height: 2px;
-  background: #f44336;
+  background: #1a0b66;
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -93,7 +93,7 @@ nav img {
 
 .hero-btn:hover {
   border: 1px solid #f44336;
-  background: #f44336;
+  background: #1a0b66;
   transition: 0.8s;
 }
 
@@ -112,7 +112,7 @@ nav .fa {
 
   .nav-links {
     position: fixed;
-    background: #f44336;
+    background: #1a0b66;
     height: 100vh;
     width: 200px;
     max-width: 100%;
@@ -389,6 +389,7 @@ h3 {
   width: 100%;
   text-align: center;
   padding: 30px 0;
+  background-color: #145e97;
 }
 
 .footer h4 {
@@ -493,7 +494,7 @@ h3 {
     height: 50vh;
     width: 100%;
     background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-      url(Images/bg3.jpg) center/cover;
+      url("Images/background.jpg") center/cover;
     /* Center and cover the background */
     text-align: center;
   }
