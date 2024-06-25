@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodXo</title>
+    <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"><img src="Images/logo1.png" alt="" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="internship.html">INTERNSHIPS</a></li>
+            <li><a href="verify.html">VERIFY</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <div class="text-box">
+        <h1>CODXO : Think Build Empower</h1>
+        <p>
+          Providing internship to students.
+        </p>
+        <a href="https://forms.gle/g641gKQacs4JiSJz8" class="hero-btn">Register Here</a>
+      </div>
+      
+    </section>
+
+    <!-- -------course--------- -->
+    <section class="course">
+      <h1>Internships We Offer</h1>
+      <div class="course-intro">
+        <p>
+          Explore our internship programs designed to nurture
+          your passion for technology and equip you with the skills to shape the
+          future.
+        </p>
+      </div>
+      <div class="row">
+        <div class="course-col">
+          <h3>Web Development</h3>
+          <p>
+            Hands-on experience with real world projects. Explore
+            html, css, javascript, reactjs and other frameworks.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Python</h3>
+          <p>
+            Explore the field of AI and Machine Learning with python.
+            Work on datasets and generate AI models.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Android </h3>
+          <p>
+            Develop Android Apps using native platforms. Develop skills
+            to thrive in the competitive market.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------footer---------------- -->
+
+    <section class="footer">
+      <marquee bgcolor= "red">Under Production!! Some functions may not work.</marquee>
+      <h1>About Us</h1>
+      
+      <div class="icons">
+        <a
+          href=""
+          class="fa fa-facebook"
+        ></a>
+        <a href="" class="fa fa-twitter"></a>
+        <a
+          href="https://t.me/joincodxo"
+          class="fa fa-telegram"
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/codxo/"
+          class="fa fa-linkedin"
+        ></a>
+      </div>
+      
+      <p>© 2024 CodXo</p>
+    </section>
+    
+    <!--Javascript for Toggle Menu-->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
