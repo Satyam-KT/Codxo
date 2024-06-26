@@ -1,14 +1,32 @@
 const nodemailer = require('nodemailer');
+const fetch = require('node-fetch');
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message, 'g-recaptcha-response': recaptchaResponse } = req.body;
 
-  if (!name || !email || !subject || !message) {
+  if (!name || !email || !subject || !message || !recaptchaResponse) {
     return res.status(400).json({ message: 'All fields are required' });
+  }
+
+  // Verify reCAPTCHA
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+  const recaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaResponse}`;
+
+  try {
+    const recaptchaRes = await fetch(recaptchaVerifyUrl, {
+      method: 'POST',
+    });
+    const recaptchaData = await recaptchaRes.json();
+
+    if (!recaptchaData.success) {
+      return res.status(400).json({ message: 'reCAPTCHA verification failed.' });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: 'Error verifying reCAPTCHA.', error: error.message });
   }
 
   // Set up nodemailer transporter
