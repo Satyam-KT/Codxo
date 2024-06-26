@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Certificate = require('../certificateModel');
+import mongoose from 'mongoose';
+import Certificate from '../certificateModel';
 
 const connectToDatabase = async () => {
   if (mongoose.connection.readyState === 0) {
