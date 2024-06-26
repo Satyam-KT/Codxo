@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   }
 
   // Verify reCAPTCHA
-  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+  const recaptchaSecret = '6LdOiQEqAAAAAJCjEuCUUHsSsZ3zzSyseomELeR_';
   const recaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaResponse}`;
 
   try {
