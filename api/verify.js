@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Certificate from '../certificateModel';
+import Certificate from '../certificateModel.js';
 
 const connectToDatabase = async () => {
   if (mongoose.connection.readyState === 0) {
