@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Certificate from '../certificateModel.js';
+import Certificate from '../certificateModel.js'; // Adjust path if necessary
 
 const connectToDatabase = async () => {
   if (mongoose.connection.readyState === 0) {
@@ -10,7 +10,7 @@ const connectToDatabase = async () => {
   }
 };
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   await connectToDatabase();
   const { certificateNumber } = req.body;
   
@@ -24,4 +24,4 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }
-};
+}
