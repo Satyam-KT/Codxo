@@ -12,8 +12,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
       rel="stylesheet"
@@ -51,23 +49,21 @@
 
     <!-- ---------------------contact us-------------------- -->
 
-    
-
     <section class="contact-us">
       <div class="row">
         <div class="contact-col">
           <div>
             <i class="fa fa-home"></i>
             <span>
-              <h5>Mecheda, DCU Building</h5>
-              <p>Washington, DC, USA</p>
+              <h5>Noida</h5>
+              <p>Uttar Pradesh, India</p>
             </span>
           </div>
 
           <div>
             <i class="fa fa-phone"></i>
             <span>
-              <h5>+1 8491817532</h5>
+              <h5>Unavailable</h5>
               <p>call us for queries</p>
             </span>
           </div>
@@ -75,7 +71,7 @@
           <div>
             <i class="fa fa-envelope-o"></i>
             <span>
-              <h5>dcuofficial@gmail.com</h5>
+              <h5>cofounder.codxo@gmail.com</h5>
               <p>Email us for queries</p>
             </span>
           </div>
@@ -83,39 +79,52 @@
 
         <div class="contact-col">
           <form id="contact-form">
-              <input type="text" name="name" placeholder="Enter your name" required/>
-              <input type="email" name="email" placeholder="Enter your email" required/>
-              <input type="text" name="subject" placeholder="Enter your subject" required/>
-              <textarea name="message" placeholder="Message" rows="10" required></textarea>
-              <button type="submit" class="hero-btn red-btn">Send Message</button>
+            <input type="text" name="name" placeholder="Enter your name" required />
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <input type="text" name="subject" placeholder="Enter your subject" required />
+            <textarea name="message" placeholder="Message" rows="10" required></textarea>
+            <button type="submit" class="hero-btn red-btn">Send Message</button>
           </form>
+        </div>
       </div>
       
       <script>
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault();
-      
-          // Collect form data
-          const formData = new FormData(this);
-      
-          // Send form data using AJAX
-          const xhr = new XMLHttpRequest();
-          xhr.open('POST', 'form_handler.php', true);
-          xhr.onreadystatechange = function() {
-              if (xhr.readyState === XMLHttpRequest.DONE) {
-                  if (xhr.status === 200) {
-                      alert('Message sent successfully!');
-                      // You can update the UI as needed here
-                  } else {
-                      alert('Error sending message.');
-                  }
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            // Collect form data
+            const formData = new FormData(this);
+        
+            // Convert FormData to JSON
+            const jsonObject = {};
+            formData.forEach((value, key) => {
+              jsonObject[key] = value;
+            });
+        
+            // Send form data using AJAX
+            fetch('/api/send', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(jsonObject)
+            })
+            .then(response => {
+              if (response.ok) {
+                alert('Message sent successfully!');
+                // You can update the UI as needed here
+              } else {
+                alert('Error sending message.');
               }
-          };
-          xhr.send(formData);
-      });
-      </script>
-      
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              alert('Error sending message.');
+            });
+        });
+        </script>
     </section>
+
     <!-- ----------footer---------------- -->
 
     <section class="footer">
@@ -128,11 +137,11 @@
         ></a>
         <a href="" class="fa fa-twitter"></a>
         <a
-          href=""
-          class="fa fa-instagram"
+          href="https://t.me/joincodxo"
+          class="fa fa-telegram"
         ></a>
         <a
-          href=""
+          href="https://www.linkedin.com/company/codxo/"
           class="fa fa-linkedin"
         ></a>
       </div>
