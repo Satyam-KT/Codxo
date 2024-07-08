@@ -23,15 +23,15 @@ app.post('/send', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'Gmail', // Change to your email provider
     auth: {
-      user: 'hr.codxo@gmail.com',
-      pass: 'hetxsmewsnouyaam'
+      user: 'cofounder.codxo@gmail.com',
+      pass: 'skzzkbpjraxqnuwz'
     }
   });
 
   // Email options
   const mailOptions = {
     from: email,
-    to: 'cofounder.codxo@gmail.com',
+    to: 'hr@codxo.in',
     subject: subject,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
   };
