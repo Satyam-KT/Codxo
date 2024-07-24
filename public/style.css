@@ -828,4 +828,75 @@ h3 {
   }
 }
 
+/* Co-Founders Section */
+.co-founders {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.co-founders h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.founder-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.founder-col {
+  flex: 1;
+  max-width: 300px;
+  margin: 10px;
+}
+
+.founder-col img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.founder-col h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.founder-col p {
+  font-size: 1rem;
+  color: #666;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .co-founders h1 {
+    font-size: 2rem;
+  }
+
+  .founder-col h2 {
+    font-size: 1.2rem;
+  }
+
+  .founder-col p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .founder-col {
+    max-width: 100%;
+  }
+
+  .co-founders h1 {
+    font-size: 1.8rem;
+  }
+
+  .founder-col h2 {
+    font-size: 1.1rem;
+  }
+
+  .founder-col p {
+    font-size: 0.85rem;
+  }
+}
 
