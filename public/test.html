@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Internships</title>
+    <title>CodXo</title>
     <link rel="icon" href="Images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,8 +12,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
       rel="stylesheet"
@@ -22,17 +20,16 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
       rel="stylesheet"
     />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9532236692608532"
-     crossorigin="anonymous"></script> 
+     crossorigin="anonymous"></script>
+    
   </head>
   <body>
-    <section class="sub-header">
+    <section class="header">
       <nav>
         <a href="index.html"><img src="Images/logo1.png" alt="" /></a>
         <div class="nav-links" id="navLinks">
@@ -47,9 +44,14 @@
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
+      <div class="text-box">
+        <h1>CODXO : Think Build Empower</h1>
+        <p>
+          Providing internship to students.
+        </p>
+        <a href="https://forms.gle/g641gKQacs4JiSJz8" class="hero-btn">Register Here</a>
+      </div>
       
-      <h1>Internships</h1></br><br>
-      <a href="https://forms.gle/g641gKQacs4JiSJz8" class="hero-btn">Apply Here</a>
     </section>
 
     <!-- -------course--------- -->
@@ -64,131 +66,70 @@
       </div>
       <div class="row">
         <div class="course-col">
-          <img src="Images/webdev.jpeg" alt="Web Development" />
+          <img src="Images/img1.jpg" alt="Web Development" />
           <h3>Web Development</h3>
           <p>
             Hands-on experience with real world projects. Explore
             html, css, javascript, reactjs and other frameworks.
           </p>
-          <a href="https://forms.gle/g641gKQacs4JiSJz8" class="apply-btn">Apply Now</a>
+          <a href="apply-web-development.html" class="apply-btn">Apply Now</a>
         </div>
         <div class="course-col">
-          <img src="Images/python.jpeg" alt="Python" />
+          <img src="Images/python.jpg" alt="Python" />
           <h3>Python</h3>
           <p>
             Explore the field of AI and Machine Learning with python.
             Work on datasets and generate AI models.
           </p>
-          <a href="https://forms.gle/g641gKQacs4JiSJz8" class="apply-btn">Apply Now</a>
+          <a href="apply-python.html" class="apply-btn">Apply Now</a>
         </div>
         <div class="course-col">
-          <img src="Images/android.png" alt="Android" />
+          <img src="Images/android.jpg" alt="Android" />
           <h3>Android</h3>
           <p>
             Develop Android Apps using native platforms. Develop skills
             to thrive in the competitive market.
           </p>
-          <a href="https://forms.gle/g641gKQacs4JiSJz8" class="apply-btn">Apply Now</a>
+          <a href="apply-android.html" class="apply-btn">Apply Now</a>
         </div>
         <div class="course-col">
-          <img src="Images/datascience.jpeg" alt="Data Science" />
+          <img src="Images/data-science.jpg" alt="Data Science" />
           <h3>Data Science</h3>
           <p>
-            A data science internship for students provides practical experience with data analysis, machine learning, 
-            and tools like Python and SQL. 
+            Hands-on experience with real world projects. Explore
+            html, css, javascript, reactjs and other frameworks.
           </p>
-          <a href="https://forms.gle/g641gKQacs4JiSJz8" class="apply-btn">Apply Now</a>
+          <a href="apply-data-science.html" class="apply-btn">Apply Now</a>
         </div>
         <div class="course-col">
-          <img src="Images/java.jpeg" alt="Java Programming" />
+          <img src="Images/java.jpg" alt="Java Programming" />
           <h3>Java Programming</h3>
           <p>
-            A Java programming internship offers students practical experience in software development, 
-            including coding, debugging, and using tools like IntelliJ and Git. 
-            
+            Explore the field of AI and Machine Learning with python.
+            Work on datasets and generate AI models.
           </p>
-          <a href="https://forms.gle/g641gKQacs4JiSJz8" class="apply-btn">Apply Now</a>
+          <a href="apply-java.html" class="apply-btn">Apply Now</a>
         </div>
         <div class="course-col">
-          <img src="Images/ml.png" alt="Machine Learning" />
+          <img src="Images/machine-learning.jpg" alt="Machine Learning" />
           <h3>Machine Learning</h3>
           <p>
-            A machine learning internship provides practical experience in developing models, 
-            working with data, and using tools like Python and TensorFlow. 
-            
+            Develop Android Apps using native platforms. Develop skills
+            to thrive in the competitive market.
           </p>
-          <a href="https://forms.gle/g641gKQacs4JiSJz8" class="apply-btn">Apply Now</a>
+          <a href="apply-machine-learning.html" class="apply-btn">Apply Now</a>
         </div>
       </div>
     </section>
-
-    <section class="interns-of-the-month">
-      <h1>Interns of the Month</h1>
-      <select id="monthSelect" onchange="displayInterns()">
-        <option value="June">June</option>
-        <option value="July">July</option>
-        <!-- Add more options for other months -->
-      </select>
-      <div class="carousel-container">
-        <button class="prev" onclick="changeIntern(-1)">&#10094;</button>
-        <div class="carousel">
-          <div class="intern" id="intern"></div>
-        </div>
-        <button class="next" onclick="changeIntern(1)">&#10095;</button>
-      </div>
-    </section>
-    
-    
-    
-    <script>
-      const interns = {
-        June: ["Images/img1.jpg", "Images/img2.jpg", "Images/img3.jpg"],
-        July: ["img4.jpg", "img5.jpg", "img6.jpg"],
-        // Add more months and images as needed
-      };
-    
-      let currentInternIndex = 0;
-    
-      function changeIntern(step) {
-        const month = document.getElementById("monthSelect").value;
-        const monthInterns = interns[month] || [];
-        currentInternIndex += step;
-        if (currentInternIndex < 0) currentInternIndex = monthInterns.length - 1;
-        if (currentInternIndex >= monthInterns.length) currentInternIndex = 0;
-        displayInterns();
-      }
-    
-      function displayInterns() {
-        const month = document.getElementById("monthSelect").value;
-        const monthInterns = interns[month] || [];
-        const internElement = document.getElementById("intern");
-    
-        if (monthInterns.length > 0 && monthInterns[currentInternIndex]) {
-          internElement.style.backgroundImage = `url('${monthInterns[currentInternIndex]}')`;
-          internElement.innerText = "";
-        } else {
-          internElement.style.backgroundImage = "";
-          internElement.innerText = "No intern available";
-        }
-      }
-    
-      // Initial display
-      window.onload = function() {
-        displayInterns();
-      };
-    </script>
-    
-    
-
-    
 
     <!-- ----------footer---------------- -->
 
     <section class="footer">
+      <!--<marquee bgcolor= "red">Under Production!! Some functions may not work.</marquee>-->
       <h1>About Us</h1>
-
-      <a href="privacypolicy.html">Privacy Policy</a>
       
+      <a href="privacypolicy.html">Privacy Policy</a>
+
       <div class="icons">
         <a
           href=""
@@ -206,9 +147,8 @@
       </div>
       
       <p>© 2024 CodXo</p>
-      
     </section>
-
+    
     <!--Javascript for Toggle Menu-->
     <script>
       var navLinks = document.getElementById("navLinks");
