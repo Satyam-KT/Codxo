@@ -89,6 +89,64 @@
       
     </section>
 
+    <section class="interns-of-the-month">
+      <h1>Interns of the Month</h1>
+      <select id="monthSelect" onchange="displayInterns()">
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <!-- Add more options for other months -->
+      </select>
+      <div class="carousel-container">
+        <button class="prev" onclick="changeIntern(-1)">&#10094;</button>
+        <div class="carousel">
+          <div class="intern" id="intern"></div>
+        </div>
+        <button class="next" onclick="changeIntern(1)">&#10095;</button>
+      </div>
+    </section>
+    
+    
+    
+    <script>
+      const interns = {
+        June: ["Images/img1.jpg", "Images/img2.jpg", "Images/img3.jpg"],
+        July: ["img4.jpg", "img5.jpg", "img6.jpg"],
+        // Add more months and images as needed
+      };
+    
+      let currentInternIndex = 0;
+    
+      function changeIntern(step) {
+        const month = document.getElementById("monthSelect").value;
+        const monthInterns = interns[month] || [];
+        currentInternIndex += step;
+        if (currentInternIndex < 0) currentInternIndex = monthInterns.length - 1;
+        if (currentInternIndex >= monthInterns.length) currentInternIndex = 0;
+        displayInterns();
+      }
+    
+      function displayInterns() {
+        const month = document.getElementById("monthSelect").value;
+        const monthInterns = interns[month] || [];
+        const internElement = document.getElementById("intern");
+    
+        if (monthInterns.length > 0 && monthInterns[currentInternIndex]) {
+          internElement.style.backgroundImage = `url('${monthInterns[currentInternIndex]}')`;
+          internElement.innerText = "";
+        } else {
+          internElement.style.backgroundImage = "";
+          internElement.innerText = "No intern available";
+        }
+      }
+    
+      // Initial display
+      window.onload = function() {
+        displayInterns();
+      };
+    </script>
+    
+    
+
     
 
     <!-- ----------footer---------------- -->

@@ -684,3 +684,79 @@ h3 {
   margin-left: 10px;
   display: flex;
 }
+
+
+.interns-of-the-month {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.intern {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #555;
+  background-size: cover;
+  background-position: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev {
+  left: 10px; /* Use relative positioning */
+}
+
+.next {
+  right: 10px; /* Use relative positioning */
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+#monthSelect {
+  margin-bottom: 20px;
+  font-size: 18px;
+  padding: 5px;
+}
+
+
+
