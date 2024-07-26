@@ -1,150 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9532236692608532"
-     crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificate Verification</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://www.codxo.in/verify.html" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .header {
-      min-height: 100vh;
-      width: 100%;
-      background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("Images/bg1.jpeg");
-      background-position: center;
-      background-size: cover;
-      position: relative;
-    }
-
-    .text-box {
-      width: 87%;
-      color: white;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-    .text-box h1 {
-      font-size: 60px;
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .text-box p {
-      margin: 25px 0 40px;
-      color: #fff3f3;
-      font-size: 17px;
-      font-family: "Poppins", sans-serif;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      text-decoration: none;
-      color: white;
-      border: 1px solid #ffffff;
-      padding: 12px 34px;
-      font-size: 15px;
-      background: transparent;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .hero-btn:hover {
-      border: 1px solid #f44336;
-      background: #f44336;
-      transition: 0.8s;
-    }
-
-    .container {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .container input {
-      padding: 10px;
-      margin: 10px 0;
-      width: 100%;
-      font-size: 16px;
-    }
-
-    .container button {
-      padding: 10px 20px;
-      background-color: #28a745;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .container button:hover {
-      background-color: #218838;
-    }
-
-    .result {
-      margin-top: 20px;
-      display: none;
-      color: white;
-    }
-
-    @media (max-width: 700px) {
-      .text-box h1 {
-        font-size: 35px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Verification</title>
+    <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="https://www.codxo.in/verify.html" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <div class="text-box">
-      <h1>Certificate Verification</h1>
-      <p>Enter the certificate number to verify your certificate</p>
-      <div class="container">
-        <input type="text" id="certificateNumber" placeholder="Enter Certificate Number" />
-        <button class="hero-btn" onclick="verifyCertificate()">Verify</button>
-        <div class="result" id="result">
-          <p id="resultText"></p>
+  
+      .header {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("Images/background.jpg");
+        background-position: center;
+        background-size: cover;
+        position: relative;
+      }
+  
+      .text-box {
+        width: 87%;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+  
+      .text-box h1 {
+        font-size: 60px;
+        font-family: "Montserrat", sans-serif;
+      }
+  
+      .text-box p {
+        margin: 25px 0 40px;
+        color: #fff3f3;
+        font-size: 17px;
+        font-family: "Poppins", sans-serif;
+      }
+  
+      .hero-btn {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        border: 1px solid #ffffff;
+        padding: 12px 34px;
+        font-size: 15px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+      }
+  
+      .hero-btn:hover {
+        border: 1px solid #f44336;
+        background: #f44336;
+        transition: 0.8s;
+      }
+  
+      .container {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+  
+      .container input {
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        font-size: 16px;
+      }
+  
+      .container button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+  
+      .container button:hover {
+        background-color: #218838;
+      }
+  
+      .result {
+        margin-top: 20px;
+        display: none;
+        color: white;
+      }
+  
+      @media (max-width: 700px) {
+        .text-box h1 {
+          font-size: 35px;
+        }
+      }
+      </style>
+  </head>
+
+  <body>
+    
+    <div class="header">
+      <div class="text-box">
+        <h1>Certificate Verification</h1>
+        <p>Enter the certificate number to verify your certificate</p>
+        <div class="container">
+          <input type="text" id="certificateNumber" placeholder="Enter Certificate Number" />
+          <button class="hero-btn" onclick="verifyCertificate()">Verify</button>
+          <div class="result" id="result">
+            <p id="resultText"></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <script>
-    async function verifyCertificate() {
-      const certificateNumber = document.getElementById('certificateNumber').value;
-      const response = await fetch('/api/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ certificateNumber })
-      });
-
-      const result = await response.json();
-      const resultText = document.getElementById('resultText');
-      const resultDiv = document.getElementById('result');
-
-      if (response.status === 200) {
-        resultText.innerHTML = `Name: ${result.name}<br>Domain: ${result.domain}<br>Certificate Number: ${certificateNumber}`;
-      } else {
-        resultText.innerHTML = result.message;
+  
+    <script>
+      async function verifyCertificate() {
+        const certificateNumber = document.getElementById('certificateNumber').value;
+        const response = await fetch('/api/verify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ certificateNumber })
+        });
+  
+        const result = await response.json();
+        const resultText = document.getElementById('resultText');
+        const resultDiv = document.getElementById('result');
+  
+        if (response.status === 200) {
+          resultText.innerHTML = `Name: ${result.name}<br>Domain: ${result.domain}<br>Certificate Number: ${certificateNumber}`;
+        } else {
+          resultText.innerHTML = result.message;
+        }
+  
+        resultDiv.style.display = 'block';
       }
+    </script>
 
-      resultDiv.style.display = 'block';
-    }
-  </script>
-</body>
+    
+      
+
+    <!-- ----------footer---------------- -->
+    <section class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h1>About CodXo</h1>
+          <p>At CodXo, we empower students through practical internships in various tech fields. 
+            Our programs are designed to provide hands-on experience and real-world skills.</p>
+        </div>
+        <div class="footer-links">
+          <h1>Quick Links</h1>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h1>Follow Us</h1>
+          <div class="social-icons">
+            <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/codxo24" class="fa fa-instagram"></a>
+            <a href="https://t.me/joincodxo" class="fa fa-telegram"></a>
+            <a href="https://www.linkedin.com/company/codxo/" class="fa fa-linkedin"></a>
+          </div>
+        </div>
+      </div>
+      <p>Copyright ©2024 All rights reserved by CodXo</p>
+    </section>
+
+    
+  </body>
 </html>
