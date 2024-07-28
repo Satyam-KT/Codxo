@@ -140,40 +140,6 @@
       </div>
     </section>
 
-    <!-- -------goodies--------- -->
-    <section class="goodies">
-      <h1>CodXo Goodies</h1>
-      <div class="goodies-content">
-        <p>
-          Exclusively available to our 'Interns of the month', enjoy these
-          specially curated CodXo goodies as a token of our appreciation for
-          your hard work and dedication.
-        </p>
-        <img src="Images/goodies.png" alt="CodXo Goodies" class="hidden-image"/>
-      </div>
-    </section>
-    <script>
-          document.addEventListener('DOMContentLoaded', function() {
-          const goodiesImage = document.querySelector('.goodies-content img');
-
-          function checkVisibility() {
-            const rect = goodiesImage.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-              goodiesImage.classList.add('visible');
-            } else {
-              goodiesImage.classList.remove('visible');
-            }
-          }
-
-          window.addEventListener('scroll', checkVisibility);
-          window.addEventListener('resize', checkVisibility);
-          checkVisibility(); // Initial check in case the section is already in view
-        });
-
-    </script>
-    
-    
-    
     <script>
       const interns = {
         June: ["Images/img1.jpg", "Images/img2.jpg", "Images/img3.jpg"],
@@ -211,10 +177,42 @@
         displayInterns();
       };
     </script>
-    
-    
 
+
+    <!-- -------goodies--------- -->
+    <section class="goodies">
+      <h1>CodXo Goodies</h1>
+      <div class="goodies-content">
+        <img src="Images/goodies.png" alt="CodXo Goodies" class="hidden-image"/>
+        <p>
+          Exclusively available to our 'Interns of the month', enjoy these
+          specially curated CodXo goodies as a token of our appreciation for
+          your hard work and dedication.
+        </p>
+        
+      </div>
+    </section>
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+          const goodiesImage = document.querySelector('.goodies-content img');
+
+          function checkVisibility() {
+            const rect = goodiesImage.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              goodiesImage.classList.add('visible');
+            } else {
+              goodiesImage.classList.remove('visible');
+            }
+          }
+
+          window.addEventListener('scroll', checkVisibility);
+          window.addEventListener('resize', checkVisibility);
+          checkVisibility(); // Initial check in case the section is already in view
+        });
+
+    </script>
     
+  
 
     <!-- ----------footer---------------- -->
     <section class="footer">
