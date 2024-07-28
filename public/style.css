@@ -1023,3 +1023,52 @@ h3 {
   }
 }
 
+/* Goodies Section */
+.goodies {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.goodies h1 {
+  font-size: 36px;
+  font-weight: 200;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.goodies-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.goodies-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.goodies-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .goodies-content {
+    padding: 0 20px;
+  }
+
+  .goodies h1 {
+    font-size: 28px;
+  }
+
+  .goodies-content p {
+    font-size: 16px;
+  }
+}
+
+
