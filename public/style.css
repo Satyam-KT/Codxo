@@ -1025,16 +1025,17 @@ h3 {
 
 /* Goodies Section */
 .goodies {
-  padding: 50px 20px;
-  background-color: #f9f9f9;
   text-align: center;
+  margin: 50px 0;
+  background-color: #f9f9f9;
+  padding: 50px 20px;
 }
 
 .goodies h1 {
   font-size: 36px;
   font-weight: 200;
   margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 .goodies-content {
@@ -1047,7 +1048,8 @@ h3 {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  color: #555;
 }
 
 .goodies-content img {
