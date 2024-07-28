@@ -149,9 +149,28 @@
           specially curated CodXo goodies as a token of our appreciation for
           your hard work and dedication.
         </p>
-        <img src="Images/goodies.png" alt="CodXo Goodies" />
+        <img src="Images/goodies.png" alt="CodXo Goodies" class="hidden-image"/>
       </div>
     </section>
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+          const goodiesImage = document.querySelector('.goodies-content img');
+
+          function checkVisibility() {
+            const rect = goodiesImage.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              goodiesImage.classList.add('visible');
+            } else {
+              goodiesImage.classList.remove('visible');
+            }
+          }
+
+          window.addEventListener('scroll', checkVisibility);
+          window.addEventListener('resize', checkVisibility);
+          checkVisibility(); // Initial check in case the section is already in view
+        });
+
+    </script>
     
     
     
