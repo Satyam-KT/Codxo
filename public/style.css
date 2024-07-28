@@ -1041,7 +1041,7 @@ h3 {
 .goodies-content {
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 .goodies-content p {
@@ -1079,6 +1079,7 @@ h3 {
 
   .goodies-content p {
     font-size: 12px;
+    text-align: center;
   }
 }
 
