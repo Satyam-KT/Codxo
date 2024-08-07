@@ -203,6 +203,65 @@
       </div>
     </section>
 
+    <!-- ----------number of interns---------------- -->
+    <section class="count-section">
+      <div class="count-container">
+        <h1>Our Impact</h1>
+        <div class="count-wrapper">
+          <div class="count-box">
+            <h2>Interns Registered So Far...</h2>
+            <p id="studentCount" class="count">0+</p>
+          </div>
+          <div class="count-box">
+            <h2>Number of Active Interns</h2>
+            <p id="activeInternsCount" class="count">0+</p>
+          </div>
+        </div>
+      </div>
+    </section>
+       
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const studentCountElement = document.getElementById('studentCount');
+        const activeInternsCountElement = document.getElementById('activeInternsCount');
+        const studentTargetCount = 4100;
+        const activeInternsTargetCount = 500;
+        const duration = 1500;
+    
+        const animateCount = (element, targetCount) => {
+          let start = 0;
+          const increment = targetCount / (duration / 16.67);
+          const interval = setInterval(() => {
+            start += increment;
+            element.innerText = Math.ceil(start) + '+';
+            if (start >= targetCount) {
+              clearInterval(interval);
+              element.innerText = targetCount + '+';
+            }
+          }, 16.67);
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateCount(studentCountElement, studentTargetCount);
+              animateCount(activeInternsCountElement, activeInternsTargetCount);
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = 'translateY(0)';
+            } else {
+              // Reset styles and count for reanimation
+              entry.target.style.opacity = 0;
+              entry.target.style.transform = 'translateY(50px)';
+              studentCountElement.innerText = '0+';
+              activeInternsCountElement.innerText = '0+';
+            }
+          });
+        });
+    
+        observer.observe(document.querySelector('.count-section'));
+      });
+    </script>    
+
    <!-- ----------footer---------------- -->
     <section class="footer">
       <div class="footer-container">
