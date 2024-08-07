@@ -213,8 +213,12 @@
             <p id="studentCount" class="count">0+</p>
           </div>
           <div class="count-box">
-            <h2>Number of Active Interns</h2>
+            <h2>Active Interns</h2>
             <p id="activeInternsCount" class="count">0+</p>
+          </div>
+          <div class="count-box">
+            <h2>Satisfied Customers</h2>
+            <p id="satisfied" class="count">0+</p>
           </div>
         </div>
       </div>
@@ -224,8 +228,10 @@
       document.addEventListener('DOMContentLoaded', function() {
         const studentCountElement = document.getElementById('studentCount');
         const activeInternsCountElement = document.getElementById('activeInternsCount');
+        const satisfied = document.getElementById('satisfied');
         const studentTargetCount = 4100;
         const activeInternsTargetCount = 500;
+        const satisfiedCount = 10;
         const duration = 1500;
     
         const animateCount = (element, targetCount) => {
@@ -246,6 +252,7 @@
             if (entry.isIntersecting) {
               animateCount(studentCountElement, studentTargetCount);
               animateCount(activeInternsCountElement, activeInternsTargetCount);
+              animateCount(satisfied, satisfiedCount);
               entry.target.style.opacity = 1;
               entry.target.style.transform = 'translateY(0)';
             } else {
@@ -254,6 +261,7 @@
               entry.target.style.transform = 'translateY(50px)';
               studentCountElement.innerText = '0+';
               activeInternsCountElement.innerText = '0+';
+              satisfied.innerText = '0+';
             }
           });
         });
@@ -281,7 +289,7 @@
         <div class="footer-social">
           <h1>Follow Us</h1>
           <div class="social-icons">
-            <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+            <a href="https://linktr.ee/codxo" class="fa fa-facebook"></a>
             <a href="https://www.instagram.com/codxo24" class="fa fa-instagram"></a>
             <a href="https://t.me/joincodxo" class="fa fa-telegram"></a>
             <a href="https://www.linkedin.com/company/codxo/" class="fa fa-linkedin"></a>

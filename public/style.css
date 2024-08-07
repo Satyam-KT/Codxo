@@ -1130,9 +1130,9 @@ h3 {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .count-container h1 {
-    font-size: 1.5rem; /* Adjusted font size for smaller screens */
-  }
+  /* .count-container h1 {
+    font-size: 1.5rem; Adjusted font size for smaller screens
+  } */
 
   .count-box h2 {
     font-size: 1.2rem; /* Adjusted font size for smaller screens */
@@ -1144,9 +1144,9 @@ h3 {
 }
 
 @media (max-width: 480px) {
-  .count-container h1 {
-    font-size: 1.2rem; /* Further adjusted font size for very small screens */
-  }
+  /* .count-container h1 {
+    font-size: 1.2rem; Further adjusted font size for very small screens
+  } */
 
   .count-box h2 {
     font-size: 1rem; /* Further adjusted font size for very small screens */
