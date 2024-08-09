@@ -1216,7 +1216,7 @@ h3 {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .carousel {
+  .carousel1 {
     height: 250px; /* Adjust height for smaller screens */
   }
 
