@@ -54,6 +54,72 @@
       <a href="https://forms.gle/g641gKQacs4JiSJz8" class="hero-btn">Apply Here</a>
     </section>
 
+    <!-- carousel main -->
+    <section class="carousel1">
+      <div class="carousel-wrapper">
+        <div class="carousel-inner">
+          <div class="carousel-slide">
+            <img src="Images/logo.jpg" alt="Benefit 4">
+            <div class="carousel-text">
+              <h2>Completion Certificate</h2>
+              <p class="carousel-description">Earn a certificate to showcase your skills 
+                and experience.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="Images/logo.jpg" alt="Benefit 1">
+            <div class="carousel-text">
+              <h2>Resume Template (High ATS Score)</h2>
+              <p class="carousel-description">Boost your chances with an optimized resume that passes <br> 
+                through Applicant Tracking Systems (ATS).</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="Images/goodies.png" alt="Benefit 2">
+            <div class="carousel-text">
+              <h2>Placement Support</h2>
+              <p class="carousel-description">Get assistance and guidance for your job placements.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="Images/logo.jpg" alt="Benefit 3">
+            <div class="carousel-text">
+              <h2>Letter of Recommendation*</h2>
+              <p class="carousel-description">Receive a valuable letter of recommendation to enhance 
+                your career prospects.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="Images/goodies.png" alt="Benefit 5">
+            <div class="carousel-text">
+              <h2>Goodies*</h2><p class="carousel-description">Receive exclusive goodies for 
+                top performers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll('.carousel-slide');
+      const totalSlides = slides.length;
+
+      const showSlide = (index) => {
+        const carouselInner = document.querySelector('.carousel-inner');
+        const translateX = -index * 100; // Shift the carousel by 100% of the width
+        carouselInner.style.transition = 'transform 1s ease-in-out';
+        carouselInner.style.transform = `translateX(${translateX}%)`;
+      };
+
+      const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % totalSlides; // Move to the next slide
+        showSlide(currentIndex);
+      };
+
+      // Start the carousel with the correct interval
+      setInterval(nextSlide, 3000); // Change slide every 5 seconds
+    </script>
+    
     <!-- -------course--------- -->
     <section class="course">
       <h1>Internships We Offer</h1>
