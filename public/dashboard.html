@@ -52,7 +52,7 @@
         }
 
         try {
-            const response = await fetch(`/api/intern/fetchIntern/${internId}`);
+            const response = await fetch(`/api/intern/${internId}`);
             if (!response.ok) {
                 throw new Error('Intern not found');
             }
