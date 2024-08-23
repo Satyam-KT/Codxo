@@ -52,7 +52,7 @@
         }
 
         try {
-            const response = await fetch(`/intern/fetchIntern/${internId}`);
+            const response = await fetch(`/api/intern/fetchIntern/${internId}`);
             if (!response.ok) {
                 throw new Error('Intern not found');
             }
@@ -126,7 +126,7 @@
                         dayCell.classList.add('bg-green-500', 'text-white');
                         alert(`Attendance marked for ${formatDate(currentDate)}.`);
                         // Update the attendance status in your database
-                        fetch('/intern/attendance', {
+                        fetch('/api/intern/attendance', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ internId, date: currentDate.toISOString() })
@@ -145,7 +145,7 @@
                     if (taskDetails.trim()) {
                         alert('Task submitted: ' + taskDetails);
                         // Save the task details in your database
-                        fetch('/intern/submitTask', {
+                        fetch('/api/intern/submitTask', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ internId, date: currentDate.toISOString(), description: taskDetails })
