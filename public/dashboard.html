@@ -59,132 +59,132 @@
             const intern = await response.json();
 
             // Display intern's name
-            document.getElementById('greeting').textContent = `Hi, ${intern.name}`;
+            // document.getElementById('greeting').textContent = `Hi, ${intern.name}`;
 
-            const startDate = new Date(intern.startDate);
-            const currentDate = new Date();
-            const endDate = new Date(startDate);
-            endDate.setDate(startDate.getDate() + 28);  // 4 weeks duration
-            const deletionDate = new Date(endDate);
-            deletionDate.setDate(endDate.getDate() + 5);  // 5 days after completion
-            console.log(startDate,currentDate,endDate,deletionDate);
-            console.log(startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
-            const currentDayDisplay = document.getElementById('current-day-display');
-            const daysPalette = document.getElementById('days-palette');
-
-            function formatDate(date) {
-                const month = date.getMonth() + 1; // Months are zero-based
-                const day = date.getDate();
-                const year = date.getFullYear();
-                return `${year}-${month}-${day}`;
-            }
-
-            function updateTimeline() {
-                const daysPassed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
-                const weeksPassed = Math.ceil(daysPassed / 7);
-               
-                for (let i = 0; i < 4; i++) {
-                    const listItem = timeline.children[i];
-                    if (i < weeksPassed) {
-                        listItem.classList.add('text-green-500');
-                    }
-                }
-
-                if (daysPassed >= 0 && daysPassed <= 28) {
-                    currentDayDisplay.textContent = `Day ${daysPassed + 1}`;
-                } else {
-                    currentDayDisplay.textContent = '';
-                }
-            }//working correctly
-
-            function createDaysPalette() {
-                for (let day = 1; day <= 28; day++) {
-                    const dayCell = document.createElement('div');
-                    dayCell.textContent = day;
-                    dayCell.className = 'w-10 h-10 flex items-center justify-center border rounded bg-gray-200';
-                    dayCell.id = `day-${day}`;
-                    daysPalette.appendChild(dayCell);
-                }
-            }//working correctly
-
-            function updateDaysPalette(attendance) {
-            attendance.forEach(entry => {
-                const entryDate = new Date(entry.date);
-                const daysPassed = Math.floor((entryDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
-                const dayCell = document.getElementById(`day-${daysPassed}`);
-                if (dayCell && entry.marked) {
-                    dayCell.classList.add('bg-green-500', 'text-white');
-                }
-            });
-            }//working correctly
-
-            function handleAttendance() {
-                if (currentDate >= startDate && currentDate <= endDate) {
-                    const daysPassed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
-                    const dayCell = document.getElementById(`day-${daysPassed}`);
-                    if (dayCell && !dayCell.classList.contains('bg-green-500')) {
-                        dayCell.classList.add('bg-green-500', 'text-white');
-                        alert(`Attendance marked for ${formatDate(currentDate)}.`);
-                        // Update the attendance status in your database
-                        fetch('/api/intern/attendance', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ internId, date: currentDate.toISOString() })
-                        });
-                    } else {
-                        alert('Attendance already marked for today.');
-                    }
-                } else {
-                    alert('Internship is not active.');
-                }
-            }
-
-            function handleTaskSubmission() {
-                if (currentDate >= startDate && currentDate <= endDate) {
-                    const taskDetails = dailyTasksTextarea.value;
-                    if (taskDetails.trim()) {
-                        alert('Task submitted: ' + taskDetails);
-                        // Save the task details in your database
-                        fetch('/api/intern/submitTask', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ internId, date: currentDate.toISOString(), description: taskDetails })
-                        });
-                        dailyTasksTextarea.value = '';  // Clear the textarea after submission
-                    } else {
-                        alert('Please describe your daily tasks.');
-                    }
-                } else {
-                    alert('Internship is not active.');
-                }
-            }
-
-            if (currentDate >= startDate && currentDate <= endDate) {
-                updateTimeline();
-                createDaysPalette();
-                updateDaysPalette(intern.attendance);
-            } 
-            else if (currentDate > endDate && currentDate <= deletionDate) {
-                markAttendanceButton.disabled = true;
-                submitTasksButton.disabled = true;
-                dailyTasksTextarea.disabled = true;
-                dailyTasksTextarea.placeholder = 'Internship completed, well done!';
-            } else if (currentDate > deletionDate) {
-                // Profile deletion logic should be handled server-side
-                alert('Your internship profile has been deleted.');
-                localStorage.removeItem('internId'); // Remove intern ID from local storage
-                window.location.href = 'login.html'; // Redirect to login
-            }
-
-            const markAttendanceButton = document.getElementById('mark-attendance');
-            const submitTasksButton = document.getElementById('submit-tasks');
-            const dailyTasksTextarea = document.getElementById('daily-tasks');
+            // const startDate = new Date(intern.startDate);
+            // const currentDate = new Date();
+            // const endDate = new Date(startDate);
+            // endDate.setDate(startDate.getDate() + 28);  // 4 weeks duration
+            // const deletionDate = new Date(endDate);
+            // deletionDate.setDate(endDate.getDate() + 5);  // 5 days after completion
+            // console.log(startDate,currentDate,endDate,deletionDate);
+            // console.log(startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
+            // const currentDayDisplay = document.getElementById('current-day-display');
             // const daysPalette = document.getElementById('days-palette');
-            //const timeline = document.getElementById('timeline'); creating problem
-            // const currentDayDisplay = document.getElementById('current-day');
 
-            markAttendanceButton.addEventListener('click', handleAttendance);
-            submitTasksButton.addEventListener('click', handleTaskSubmission);
+            // function formatDate(date) {
+            //     const month = date.getMonth() + 1; // Months are zero-based
+            //     const day = date.getDate();
+            //     const year = date.getFullYear();
+            //     return `${year}-${month}-${day}`;
+            // }
+
+            // function updateTimeline() {
+            //     const daysPassed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+            //     const weeksPassed = Math.ceil(daysPassed / 7);
+               
+            //     for (let i = 0; i < 4; i++) {
+            //         const listItem = timeline.children[i];
+            //         if (i < weeksPassed) {
+            //             listItem.classList.add('text-green-500');
+            //         }
+            //     }
+
+            //     if (daysPassed >= 0 && daysPassed <= 28) {
+            //         currentDayDisplay.textContent = `Day ${daysPassed + 1}`;
+            //     } else {
+            //         currentDayDisplay.textContent = '';
+            //     }
+            // }//working correctly
+
+            // function createDaysPalette() {
+            //     for (let day = 1; day <= 28; day++) {
+            //         const dayCell = document.createElement('div');
+            //         dayCell.textContent = day;
+            //         dayCell.className = 'w-10 h-10 flex items-center justify-center border rounded bg-gray-200';
+            //         dayCell.id = `day-${day}`;
+            //         daysPalette.appendChild(dayCell);
+            //     }
+            // }//working correctly
+
+            // function updateDaysPalette(attendance) {
+            // attendance.forEach(entry => {
+            //     const entryDate = new Date(entry.date);
+            //     const daysPassed = Math.floor((entryDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+            //     const dayCell = document.getElementById(`day-${daysPassed}`);
+            //     if (dayCell && entry.marked) {
+            //         dayCell.classList.add('bg-green-500', 'text-white');
+            //     }
+            // });
+            // }//working correctly
+
+            // function handleAttendance() {
+            //     if (currentDate >= startDate && currentDate <= endDate) {
+            //         const daysPassed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+            //         const dayCell = document.getElementById(`day-${daysPassed}`);
+            //         if (dayCell && !dayCell.classList.contains('bg-green-500')) {
+            //             dayCell.classList.add('bg-green-500', 'text-white');
+            //             alert(`Attendance marked for ${formatDate(currentDate)}.`);
+            //             // Update the attendance status in your database
+            //             fetch('/api/intern/attendance', {
+            //                 method: 'POST',
+            //                 headers: { 'Content-Type': 'application/json' },
+            //                 body: JSON.stringify({ internId, date: currentDate.toISOString() })
+            //             });
+            //         } else {
+            //             alert('Attendance already marked for today.');
+            //         }
+            //     } else {
+            //         alert('Internship is not active.');
+            //     }
+            // }
+
+            // function handleTaskSubmission() {
+            //     if (currentDate >= startDate && currentDate <= endDate) {
+            //         const taskDetails = dailyTasksTextarea.value;
+            //         if (taskDetails.trim()) {
+            //             alert('Task submitted: ' + taskDetails);
+            //             // Save the task details in your database
+            //             fetch('/api/intern/submitTask', {
+            //                 method: 'POST',
+            //                 headers: { 'Content-Type': 'application/json' },
+            //                 body: JSON.stringify({ internId, date: currentDate.toISOString(), description: taskDetails })
+            //             });
+            //             dailyTasksTextarea.value = '';  // Clear the textarea after submission
+            //         } else {
+            //             alert('Please describe your daily tasks.');
+            //         }
+            //     } else {
+            //         alert('Internship is not active.');
+            //     }
+            // }
+
+            // if (currentDate >= startDate && currentDate <= endDate) {
+            //     updateTimeline();
+            //     createDaysPalette();
+            //     updateDaysPalette(intern.attendance);
+            // } 
+            // else if (currentDate > endDate && currentDate <= deletionDate) {
+            //     markAttendanceButton.disabled = true;
+            //     submitTasksButton.disabled = true;
+            //     dailyTasksTextarea.disabled = true;
+            //     dailyTasksTextarea.placeholder = 'Internship completed, well done!';
+            // } else if (currentDate > deletionDate) {
+            //     // Profile deletion logic should be handled server-side
+            //     alert('Your internship profile has been deleted.');
+            //     localStorage.removeItem('internId'); // Remove intern ID from local storage
+            //     window.location.href = 'login.html'; // Redirect to login
+            // }
+
+            // const markAttendanceButton = document.getElementById('mark-attendance');
+            // const submitTasksButton = document.getElementById('submit-tasks');
+            // const dailyTasksTextarea = document.getElementById('daily-tasks');
+            // // const daysPalette = document.getElementById('days-palette');
+            // //const timeline = document.getElementById('timeline'); creating problem
+            // // const currentDayDisplay = document.getElementById('current-day');
+
+            // markAttendanceButton.addEventListener('click', handleAttendance);
+            // submitTasksButton.addEventListener('click', handleTaskSubmission);
 
             document.getElementById('logout').addEventListener('click', () => {
                 localStorage.removeItem('internId'); // Clear local storage
