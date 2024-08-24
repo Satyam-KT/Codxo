@@ -2,10 +2,10 @@ import nodemailer from 'nodemailer';
 
 export const sendEmail = (email, internId, whatsappNumber) => {
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'gmail', // Ensure the service is 'gmail'
     auth: {
       user: 'cofounder.codxo@gmail.com',
-      pass: 'skzzkbpjraxqnuwz',
+      pass: 'skzzkbpjraxqnuwz', // Use an App password if 2-Step Verification is enabled
     },
   });
 
@@ -18,9 +18,9 @@ export const sendEmail = (email, internId, whatsappNumber) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error('Error sending email:', error);
+      console.error('Error sending email:', error); // Log the error
     } else {
-      console.log('Email sent:', info.response);
+      console.log('Email sent:', info.response); // Log the successful response
     }
   });
 };
