@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       await intern.save();
 
       // Send an email with intern details
-      sendEmail(email, internId, whatsappNumber);
+      await sendEmail(email, internId, whatsappNumber);
 
       // Send a success response
       res.status(201).send('Intern profile created and email sent.');
