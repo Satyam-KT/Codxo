@@ -4,13 +4,13 @@ export const sendEmail = (email, internId, whatsappNumber) => {
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'co-founder.codxo@gmail.com',
+      user: 'cofounder.codxo@gmail.com',
       pass: 'skzzkbpjraxqnuwz',
     },
   });
 
   const mailOptions = {
-    from: 'co-founder.codxo@gmail.com',
+    from: 'cofounder.codxo@gmail.com',
     to: email,
     subject: 'Your Internship Credentials',
     text: `Your Intern ID: ${internId}\nYour Password is your WhatsApp number.`,
