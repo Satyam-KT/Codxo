@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1CmrxMRARb6aLqgBO7+cdXk4mfWbBPOuC0gKfyP57sczzxMG17j6kNj7A1WTI3Sm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- <style>
+    <style>
         /* Spinner styles */
         #spinner {
             display: none; /* Initially hide spinner */
@@ -22,7 +22,7 @@
             align-items: center;
             justify-content: center;
         }
-    </style> -->
+    </style>
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
 
@@ -52,9 +52,9 @@
         </div>
     </form>
 
-    <!-- Bootstrap Spinner -->
-    <div id="spinner" class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-white bg-opacity-75">
-        <div class="spinner-grow text-primary" role="status">
+    <!-- Spinner -->
+    <div id="spinner">
+        <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
@@ -67,7 +67,7 @@
         const password = document.getElementById('password').value;
 
         // Show the spinner
-        spinner.classList.remove('d-none');
+        spinner.style.display = 'flex';
 
         try {
             const response = await fetch('/api/intern/login', {
@@ -78,8 +78,8 @@
                 body: JSON.stringify({ internId, whatsappNumber: password })
             });
 
-             // Hide the spinner
-             spinner.classList.add('d-none');
+            // Hide the spinner
+            spinner.style.display = 'none';
 
             if (response.ok) {
                 const result = await response.json();
@@ -92,7 +92,7 @@
         } catch (error) {
             console.error('Error during login:', error);
             alert('An error occurred. Please try again later.');
-            spinner.classList.add('d-none'); // Hide the spinner in case of error
+            spinner.style.display = 'none'; // Hide the spinner in case of error
         }
     }
 </script>
