@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intern Login</title>
     <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1CmrxMRARb6aLqgBO7+cdXk4mfWbBPOuC0gKfyP57sczzxMG17j6kNj7A1WTI3Sm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
@@ -34,10 +36,18 @@
             </button>
         </div>
     </form>
+    <div id="spinner" class="d-none justify-content-center align-items-center position-fixed w-100 h-100">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    
 </div>
 
 <script>
     async function login() {
+        // Show the spinner
+        document.getElementById('spinner').classList.remove('d-none');
         const internId = document.getElementById('internId').value;
         const password = document.getElementById('password').value;
 
@@ -49,6 +59,9 @@
                 },
                 body: JSON.stringify({ internId, whatsappNumber:password })
             });
+
+            // Hide the spinner
+            document.getElementById('spinner').classList.add('d-none');
 
             if (response.ok) {
                 const result = await response.json();
@@ -64,6 +77,10 @@
         }
     }
 </script>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-7/zSfpLE2qNQihc7iTQKY/p6kN01zbiWkQFtNHEqx8L5eo1lGi5J5Et7HA6fhc30" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12G8gjVJm1pxC0b5o2Fw5f2yDxGf6bH6A+j3pI4Hzf6zkFo" crossorigin="anonymous"></script>
 
 </body>
 </html>
