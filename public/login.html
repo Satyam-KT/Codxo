@@ -67,7 +67,7 @@
         const password = document.getElementById('password').value;
 
         // Show the spinner
-        spinner.style.display = 'flex';
+        spinner.classList.remove('d-none');
 
         try {
             const response = await fetch('/api/intern/login', {
@@ -78,8 +78,8 @@
                 body: JSON.stringify({ internId, whatsappNumber: password })
             });
 
-            // Hide the spinner
-            spinner.style.display = 'none';
+             // Hide the spinner
+             spinner.classList.add('d-none');
 
             if (response.ok) {
                 const result = await response.json();
@@ -92,7 +92,7 @@
         } catch (error) {
             console.error('Error during login:', error);
             alert('An error occurred. Please try again later.');
-            spinner.style.display = 'none'; // Hide the spinner in case of error
+            spinner.classList.add('d-none'); // Hide the spinner in case of error
         }
     }
 </script>

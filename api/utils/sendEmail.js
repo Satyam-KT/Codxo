@@ -13,7 +13,7 @@ export const sendEmail = async (email, internId, whatsappNumber) => {
     from: 'cofounder.codxo@gmail.com',
     to: email,
     subject: 'Your Internship Credentials',
-    text: `Your Intern ID: ${internId}\nYour Password is your WhatsApp number.`,
+    text: `Your Intern ID: ${internId}\nYour Password is your WhatsApp number.\n\nYou can log in here: www.codxo.in/login`,
   };
 
   try {
