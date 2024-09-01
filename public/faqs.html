@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodXo Internship Program - FAQs</title>
+    <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="https://www.codxo.in/about.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden { display: none; }
+    </style>
+    <script>
+        let currentPage = 1;
+        const questionsPerPage = 5;
+
+        function showPage(pageNumber) {
+            const allQuestions = document.querySelectorAll('.faq-item');
+            allQuestions.forEach((item, index) => {
+                item.style.display = (index >= (pageNumber - 1) * questionsPerPage && index < pageNumber * questionsPerPage) ? 'block' : 'none';
+            });
+        }
+
+        function changePage(direction) {
+            const totalQuestions = document.querySelectorAll('.faq-item').length;
+            const totalPages = Math.ceil(totalQuestions / questionsPerPage);
+            const newPage = currentPage + direction;
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                showPage(currentPage);
+                document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+                document.getElementById('prev-btn').disabled = currentPage === 1;
+                document.getElementById('next-btn').disabled = currentPage === totalPages;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage(currentPage);
+            const totalQuestions = document.querySelectorAll('.faq-item').length;
+            const totalPages = Math.ceil(totalQuestions / questionsPerPage);
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+        });
+    </script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- header -->
+    <section class="sub-header" style="height: 200px;"> 
+        <nav>
+          <a href="index.html"><img src="Images/logo1.png" alt="" /></a>
+        </nav>
+        <!-- <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">FAQs</h1> -->
+      </section>
+
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">CodXo Internship Program - FAQs</h1>
+
+        <div id="faq-container">
+            <!-- FAQ items -->
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">1. What is the LinkedIn Profile Update requirement?</h2>
+                <p class="mt-2 text-gray-600">
+                    Interns are required to update their LinkedIn profiles to reflect their achievements during the internship. You must share all accomplishments, such as receiving the Offer Letter and Internship Completion Certificate, by tagging @CODXO in your posts.
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">2. How are the Best Interns selected?</h2>
+                <p class="mt-2 text-gray-600">
+                    The selection of the best interns will be based on adherence to coding standards, quality of work, priority in submission, and the completion of all assigned tasks. The company holds the discretion to select a specific number of candidates for recognition.
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">3. Do I need to maintain a GitHub repository?</h2>
+                <p class="mt-2 text-gray-600">
+                    Yes, interns must maintain a separate GitHub repository named “CODXO” for all tasks related to the internship. The link to this repository must be provided in the task submission form.
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">4. What are the certification tiers and associated fees?</h2>
+                <p class="mt-2 text-gray-600">
+                    CODXO offers a three-tier certification system based on the level of projects you complete:
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Gold Certificate: Awarded to interns who complete intermediate projects.</li>
+                        <li>Silver Certificate: Awarded to interns who complete basic projects.</li>
+                        <li>Diamond Certificate (With Letter of Recommendation): Awarded to interns who complete full-stack projects.</li>
+                    </ul>
+                    Each certification tier may have a small variance in the associated fees, reflecting the level of expertise and effort required. Certificates will be provided within 7 days of the internship completion date.
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">5. Is there a fee for profile creation and certificates?</h2>
+                <p class="mt-2 text-gray-600">
+                    Yes, there are two main fees:
+                    <ul class="list-disc list-inside mt-2">
+                        <li><strong>Joining cum Profile Creation Fee (Rs 29/-):</strong> This fee is required to join the program and includes the creation of your profile. This fee also serves to demonstrate your commitment to the internship.</li>
+                        <li><strong>Certificate Generation Fee:</strong> A nominal fee will be charged for the verification of tasks by our technical expert team and the generation of certificates. This process is managed by a designated service provider.</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">6. What is the internship's no-refund policy?</h2>
+                <p class="mt-2 text-gray-600">
+                    All fees paid for profile creation, task verification, and certification services are non-refundable. By participating in the CODXO internship program, you acknowledge and agree to this no-refund policy.
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">7. What is the policy on the originality of work?</h2>
+                <p class="mt-2 text-gray-600">
+                    All projects and code submitted must be original. If any project or code is found to be copied, the internship will be terminated immediately, and the intern will be banned from future opportunities with CODXO.
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">8. What are the daily requirements on the Intern Portal?</h2>
+            <p class="mt-2 text-gray-600">
+                After filling the joining form, you will receive credentials for the intern portal where you must:
+                <ul class="list-disc list-inside mt-2">
+                    <li><strong>Mark Attendance:</strong> Mark attendance daily, with up to 4 absences/leaves allowed by default.</li>
+                    <li><strong>Daily Updates:</strong> Describe your daily activities related to the internship, such as learning or task implementation.</li>
+                </ul>
+            </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">9. Who owns the work completed during the internship?</h2>
+                <p class="mt-2 text-gray-600">
+                    All work, tasks, and projects completed during the internship will be legally licensable to CODXO. By participating in this program, you agree that CODXO retains the rights to use, modify, and distribute any work you create as part of the internship.
+                </p>
+            </div>
+
+            <div class="faq-item bg-white shadow-md rounded-lg p-6 mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">10. What is expected in terms of self-learning?</h2>
+                <p class="mt-2 text-gray-600">
+                    This internship encourages self-driven learning. You are expected to develop the necessary skills on your own, using free resources or those provided along with the tasks. Taking initiative in learning is key to your internship experience.
+                </p>
+            </div>
+        </div>
+
+        <!-- Pagination controls -->
+        <div class="mt-6 text-center">
+            <button id="prev-btn" onclick="changePage(-1)" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Previous</button>
+            <span id="page-info" class="mx-4 text-lg"></span>
+            <button id="next-btn" onclick="changePage(1)" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Next</button>
+        </div>
+    </div>
+
+    <!-- ----------footer---------------- -->
+    <section class="footer">
+        <div class="footer-container">
+          <div class="footer-about">
+            <h1>About CodXo</h1>
+            <p>At CodXo, we empower students through practical internships in various tech fields. 
+              Our programs are designed to provide hands-on experience and real-world skills.</p>
+          </div>
+          <div class="footer-links">
+            <h1>Quick Links</h1>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h1>Follow Us</h1>
+            <div class="social-icons">
+              <a href="https://linktr.ee/codxo" class="fa fa-link"></a>
+              <a href="https://www.instagram.com/codxo24" class="fa fa-instagram"></a>
+              <a href="https://t.me/joincodxo" class="fa fa-telegram"></a>
+              <a href="https://www.linkedin.com/company/codxo/" class="fa fa-linkedin"></a>
+            </div>
+          </div>
+        </div>
+        <p>Copyright ©2024 All rights reserved by CodXo</p>
+      </section>
+</body>
+</html>
