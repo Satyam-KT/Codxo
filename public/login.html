@@ -85,7 +85,7 @@
                 const result = await response.json();
                 localStorage.setItem('internId', result.internId); // Store internId in localStorage
                 alert('Login successful!');
-                window.location.href = 'dashboard.html';
+                window.location.href = 'dashboard';
             } else {
                 alert('Invalid Intern ID or Password. Please try again.');
             }
