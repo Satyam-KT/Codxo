@@ -7,15 +7,6 @@
       { "source": "/login", "destination": "/login.html" },
       { "source": "/dashboard", "destination": "/dashboard.html" },
       { "source": "/FAQs", "destination": "/faqs.html" }
-    ],
-    "redirects": [
-      { "source": "/about.html", "destination": "/about", "permanent": true },
-      { "source": "/internship.html", "destination": "/internship", "permanent": true },
-      { "source": "/verify.html", "destination": "/verify", "permanent": true },
-      { "source": "/contact.html", "destination": "/contact", "permanent": true },
-      { "source": "/login.html", "destination": "/login", "permanent": true },
-      { "source": "/dashboard.html", "destination": "/dashboard", "permanent": true },
-      { "source": "/faqs.html", "destination": "/FAQs", "permanent": true }
     ]
   }
   
