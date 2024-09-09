@@ -6,7 +6,9 @@
       { "source": "/contact", "destination": "/contact.html" },
       { "source": "/login", "destination": "/login.html" },
       { "source": "/dashboard", "destination": "/dashboard.html" },
-      { "source": "/FAQs", "destination": "/faqs.html" }
+      { "source": "/FAQs", "destination": "/faqs.html" },
+      { "source": "/index", "destination": "https://www.codxo.in/" }
+
     ]
   }
   
